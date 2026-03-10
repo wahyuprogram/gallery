@@ -34,25 +34,31 @@ Sistem ini dibangun dengan mematuhi struktur *Entity Relationship Diagram* (ERD)
 
 ### 🔐 Autentikasi (Register & Login)
 Antarmuka pendaftaran dan masuk yang bersih, aman, dan simpel.
+
 Login
+
 <img width="397" height="367" alt="image" src="https://github.com/user-attachments/assets/2c10c36e-3540-42fd-acf6-33a3bb021766" />
 
 Register
+
 <img width="270" height="359" alt="image" src="https://github.com/user-attachments/assets/3bb8574c-274e-4ed7-a538-d1fa0ca63247" />
 
 
 ### 🖼️ Beranda Galeri (User & Admin)
 Grid galeri yang responsif menampilkan foto-foto terbaru, jumlah *Like*, dan *Komentar*.
+
 <img width="947" height="403" alt="image" src="https://github.com/user-attachments/assets/db9b9ae2-a87c-4a6a-86c5-97cbe5d87765" />
 
 
 ### 💬 Detail Foto & Interaksi (Komentar Admin)
 Tampilan foto ukuran besar beserta fitur diskusi interaktif (*Threaded Reply*) antara User dan Admin.
-<img width="603" height="301" alt="image" src="https://github.com/user-attachments/assets/7f30e0bf-c5d9-426e-aebe-38e23124c2a5" />
+
+![Uploading image.png…]()
 
 
 ### 🛠️ Panel Manajemen C.R.U.D (Admin Only)
 Kontrol penuh bagi administrator untuk menambah, mengedit, dan menghapus foto dari galeri.
+
 <img width="945" height="409" alt="image" src="https://github.com/user-attachments/assets/afba095a-9430-4e61-b86f-b84509a1d831" />
 
 
@@ -63,7 +69,7 @@ Kontrol penuh bagi administrator untuk menambah, mengedit, dan menghapus foto da
 Hanya butuh 4 langkah mudah untuk menjalankan aplikasi ini di lingkungan lokal Anda (XAMPP/Laragon):
 
 **1. Clone Repositori**
-```bash
+
 git clone https://github.com/wahyuprogram/gallery.git
 cd gallery
 
