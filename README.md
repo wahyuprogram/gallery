@@ -81,8 +81,8 @@ Buat database kosong di MySQL (phpMyAdmin) dengan nama: db_gallery
 Jalankan perintah instalasi dependensi:
 
 composer install
-cp .env.example .env
 php artisan key:generate
+sambungkan database di file .env
 
 **3. Migrasi Struktur Tabel**
 
