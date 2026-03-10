@@ -53,7 +53,8 @@ Grid galeri yang responsif menampilkan foto-foto terbaru, jumlah *Like*, dan *Ko
 ### 💬 Detail Foto & Interaksi (Komentar Admin)
 Tampilan foto ukuran besar beserta fitur diskusi interaktif (*Threaded Reply*) antara User dan Admin.
 
-![Uploading image.png…]()
+<img width="326" height="410" alt="image" src="https://github.com/user-attachments/assets/160a8af4-3f1f-42fe-abd8-f8f18d0a5a2e" />
+
 
 
 ### 🛠️ Panel Manajemen C.R.U.D (Admin Only)
@@ -73,24 +74,22 @@ Hanya butuh 4 langkah mudah untuk menjalankan aplikasi ini di lingkungan lokal A
 git clone https://github.com/wahyuprogram/gallery.git
 cd gallery
 
-2. Persiapan Environment & Database
+**2. Persiapan Environment & Database**
 
 Buat database kosong di MySQL (phpMyAdmin) dengan nama: db_gallery
 
 Jalankan perintah instalasi dependensi:
 
-Bash
 composer install
 cp .env.example .env
 php artisan key:generate
-3. Migrasi Struktur Tabel
 
-Bash
+**3. Migrasi Struktur Tabel**
+
 php artisan migrate
 (Catatan: Aplikasi ini menggunakan metode direct public upload, sehingga tidak memerlukan perintah storage:link dan dijamin bebas error di sistem Windows).
 
-4. Jalankan Aplikasi
+**4. Jalankan Aplikasi**
 
-Bash
 php artisan serve
 Akses aplikasi melalui browser di: http://127.0.0.1:8000
