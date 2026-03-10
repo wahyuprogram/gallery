@@ -1,59 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🖼️ Galeri Foto 2026
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Platform Manajemen Galeri Foto Digital yang dirancang dengan antarmuka elegan bertema *Deep Purple* untuk pengalaman visual yang mewah dan modern.
 
-## About Laravel
+## 🚀 Fitur Unggulan
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aplikasi ini tidak hanya memenuhi standar dasar, tetapi dilengkapi dengan fitur lanjutan:
+- **🛡️ Role-Based Access Control (RBAC):** Pemisahan hak akses mutlak antara **Admin** (Pengelola Galeri) dan **User** (Pengunjung/Anggota).
+- **💬 Smart Threaded Comments:** Sistem komentar interaktif di mana Admin dapat memberikan balasan langsung (*Reply*) pada foto yang dilengkapi dengan *Badge* resmi (👑 Admin).
+- **❤️ Engagement System:** Dilengkapi fitur *Like* (Suka) *real-time* untuk mengukur popularitas setiap karya foto.
+- **🖼️ Advanced Media Handling:** Mendukung format gambar modern (WebP, JPG, PNG) dengan sistem penyimpanan *Direct Public Path* yang dijamin 100% bebas dari *error storage:link* pada OS Windows.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🏛️ Arsitektur & Database
 
-## Learning Laravel
+Sistem ini dibangun dengan mematuhi struktur *Entity Relationship Diagram* (ERD) standar industri yang telah dinormalisasi untuk menjaga integritas relasi data.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+**📊 Data Dictionary**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Nama Tabel | Primary Key | Foreign Key | Fungsi Utama |
+| :--- | :--- | :--- | :--- |
+| `gallery_user` | `UserID` | - | Mengelola Autentikasi & Hak Akses (`Role`) |
+| `gallery_album` | `AlbumID` | `UserID` | Mengelola Data Album / Kategori Foto |
+| `gallery_foto` | `FotoID` | `AlbumID`, `UserID` | Mengelola Data Karya Foto & File Gambar |
+| `gallery_komentarfoto`| `KomentarID`| `FotoID`, `UserID` | Merekam Interaksi Komentar Pengguna pada Foto |
+| `gallery_likefoto` | `LikeID` | `FotoID`, `UserID` | Merekam Data Favorit / Suka pada Foto |
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📸 Dokumentasi Visual (Output)
 
-### Premium Partners
+*(Catatan: Letakkan screenshot aplikasimu di dalam folder `screens` lalu sesuaikan nama filenya)*
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 🔐 Autentikasi (Register & Login)
+Antarmuka pendaftaran dan masuk yang bersih, aman, dan simpel.
+Login
+<img width="397" height="367" alt="image" src="https://github.com/user-attachments/assets/2c10c36e-3540-42fd-acf6-33a3bb021766" />
 
-## Contributing
+Register
+<img width="270" height="359" alt="image" src="https://github.com/user-attachments/assets/3bb8574c-274e-4ed7-a538-d1fa0ca63247" />
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+### 🖼️ Beranda Galeri (User & Admin)
+Grid galeri yang responsif menampilkan foto-foto terbaru, jumlah *Like*, dan *Komentar*.
+<img width="947" height="403" alt="image" src="https://github.com/user-attachments/assets/db9b9ae2-a87c-4a6a-86c5-97cbe5d87765" />
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+### 💬 Detail Foto & Interaksi (Komentar Admin)
+Tampilan foto ukuran besar beserta fitur diskusi interaktif (*Threaded Reply*) antara User dan Admin.
+<img width="603" height="301" alt="image" src="https://github.com/user-attachments/assets/7f30e0bf-c5d9-426e-aebe-38e23124c2a5" />
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+### 🛠️ Panel Manajemen C.R.U.D (Admin Only)
+Kontrol penuh bagi administrator untuk menambah, mengedit, dan menghapus foto dari galeri.
+<img width="945" height="409" alt="image" src="https://github.com/user-attachments/assets/afba095a-9430-4e61-b86f-b84509a1d831" />
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+## ⚙️ Instalasi Cepat (Quick Start)
+
+Hanya butuh 4 langkah mudah untuk menjalankan aplikasi ini di lingkungan lokal Anda (XAMPP/Laragon):
+
+**1. Clone Repositori**
+```bash
+git clone https://github.com/wahyuprogram/gallery.git
+cd gallery
+
+2. Persiapan Environment & Database
+
+Buat database kosong di MySQL (phpMyAdmin) dengan nama: db_gallery
+
+Jalankan perintah instalasi dependensi:
+
+Bash
+composer install
+cp .env.example .env
+php artisan key:generate
+3. Migrasi Struktur Tabel
+
+Bash
+php artisan migrate
+(Catatan: Aplikasi ini menggunakan metode direct public upload, sehingga tidak memerlukan perintah storage:link dan dijamin bebas error di sistem Windows).
+
+4. Jalankan Aplikasi
+
+Bash
+php artisan serve
+Akses aplikasi melalui browser di: http://127.0.0.1:8000
